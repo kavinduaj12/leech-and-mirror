@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "hitech-27aa"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "hitech-27aa"
+  template:
+    metadata:
+      labels:
+        app: "hitech-27aa"
+    spec:
+      containers:
+        - name: "hitech-27aa"
+          image: "lkhitech.azurecr.io/hitech"
+          ports:
+          - containerPort: 80
