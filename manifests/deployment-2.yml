@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "hitech-1ac9"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "hitech-1ac9"
+  template:
+    metadata:
+      labels:
+        app: "hitech-1ac9"
+    spec:
+      containers:
+        - name: "hitech-1ac9"
+          image: "kmac5d.azurecr.io/hitech"
+          ports:
+          - containerPort: 80
