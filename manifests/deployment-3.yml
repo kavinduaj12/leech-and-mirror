@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "cs-9254"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "cs-9254"
+  template:
+    metadata:
+      labels:
+        app: "cs-9254"
+    spec:
+      containers:
+        - name: "cs-9254"
+          image: "csd87.azurecr.io/cs"
+          ports:
+          - containerPort: 80
