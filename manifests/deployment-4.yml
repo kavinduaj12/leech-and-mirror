@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "cs-9a3b"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "cs-9a3b"
+  template:
+    metadata:
+      labels:
+        app: "cs-9a3b"
+    spec:
+      containers:
+        - name: "cs-9a3b"
+          image: "cdcdc.azurecr.io/cs"
+          ports:
+          - containerPort: 80
